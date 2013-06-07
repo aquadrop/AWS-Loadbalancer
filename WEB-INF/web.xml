@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+
+	<context-param>
+		<param-name>adminUsername</param-name>
+		<param-value>admin</param-value>
+		<description>Addmin username</description>
+	</context-param>
+	
+	<context-param>
+		<param-name>adminUsername2</param-name>
+		<param-value>admin</param-value>
+		<description>Addmin username</description>
+	</context-param>
+
+	<context-param>
+		<param-name>adminPassword</param-name>
+		<param-value>password</param-value>
+		<description>Addmin password</description>
+	</context-param>
+
+	
+	<context-param>
+			<param-name>AWSaccessKey</param-name>
+			<param-value>AKIAJTMZ2QYOOVJFXUPQ</param-value>
+		</context-param>
+
+		<context-param>
+			<param-name>AWSsecretKey</param-name>
+			<param-value>QYHJL/zP+wKSFHyWgUNXOAu+9+W5ngvrfc8IgElr</param-value>
+		</context-param>
+
+		<context-param>
+			<param-name>dbDriver</param-name>
+			<param-value>com.mysql.jdbc.Driver</param-value>
+		</context-param>
+
+		<!-- replace the info bellow with the details for your DB -->
+		<context-param>
+			<param-name>dbURL</param-name>
+			<param-value>jdbc:mysql://127.0.0.1:3306/AndroidMAM</param-value>
+		</context-param>
+
+		<context-param>
+			<param-name>dbUser</param-name>
+			<param-value>android</param-value>
+		</context-param>
+
+		<context-param>
+			<param-name>dbPassword</param-name>
+			<param-value>password</param-value>
+		</context-param>
+	
+	
+	
+	
+	
+	
+	
+	<!-- Define servlets that are included in the example application -->
+	<servlet>
+		<servlet-name>EC2Initialization</servlet-name>
+		<servlet-class>ece1779.ec2.Initialization</servlet-class>
+		<load-on-startup>3</load-on-startup>
+
+		<!-- Replace with AWS key for your account -->
+		<init-param>
+			<param-name>AWSaccessKey</param-name>
+			<param-value>AKIAJTMZ2QYOOVJFXUPQ</param-value>
+		</init-param>
+
+		<init-param>
+			<param-name>AWSsecretKey</param-name>
+			<param-value>QYHJL/zP+wKSFHyWgUNXOAu+9+W5ngvrfc8IgElr</param-value>
+		</init-param>
+
+		<init-param>
+			<param-name>dbDriver</param-name>
+			<param-value>com.mysql.jdbc.Driver</param-value>
+		</init-param>
+
+		<!-- replace the info bellow with the details for your DB -->
+		<init-param>
+			<param-name>dbURL</param-name>
+			<param-value>jdbc:mysql://127.0.0.1:3306/AndroidMAM</param-value>
+		</init-param>
+
+		<init-param>
+			<param-name>dbUser</param-name>
+			<param-value>android</param-value>
+		</init-param>
+
+		<init-param>
+			<param-name>dbPassword</param-name>
+			<param-value>password</param-value>
+		</init-param>
+		
+	</servlet>
+
+		<!-- <listener>
+			<listener-class>ece1779.ec2.manager.BackgroundLoadBalancer</listener-class>
+		</listener> -->
+
+
+
+
+	<servlet>
+		<servlet-name>WelcomePage</servlet-name>
+		<servlet-class>ece1779.ec2.WelcomePage</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>Logout</servlet-name>
+		<servlet-class>ece1779.ec2.Logout</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>Register</servlet-name>
+		<servlet-class>ece1779.ec2.user.Register</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>UserLogin</servlet-name>
+		<servlet-class>ece1779.ec2.user.Login</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>AndroidLogin</servlet-name>
+		<servlet-class>ece1779.ec2.android.Login</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>QueryDatabase</servlet-name>
+		<servlet-class>ece1779.ec2.android.QueryDatabase</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>FileUpload</servlet-name>
+		<servlet-class>ece1779.ec2.user.FileUpload</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>ExtraFileUpload</servlet-name>
+		<servlet-class>ece1779.ec2.user.ExtraFileUpload</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>ListImages</servlet-name>
+		<servlet-class>ece1779.ec2.user.ListImages</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>ViewImage</servlet-name>
+		<servlet-class>ece1779.ec2.user.ViewImage</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>ManagerLogin</servlet-name>
+		<servlet-class>ece1779.ec2.manager.Login</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>UserManager</servlet-name>
+		<servlet-class>ece1779.ec2.manager.UserManager</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>LoadManager</servlet-name>
+		<servlet-class>ece1779.ec2.manager.LoadManager</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>StartInstance</servlet-name>
+		<servlet-class>ece1779.ec2.manager.StartInstance</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>ShutdownInstance</servlet-name>
+		<servlet-class>ece1779.ec2.manager.ShutdownInstance</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>InstanceMetrics</servlet-name>
+		<servlet-class>ece1779.ec2.manager.InstanceMetrics</servlet-class>
+	</servlet>
+
+
+	<servlet-mapping>
+		<servlet-name>WelcomePage</servlet-name>
+		<url-pattern>/Welcome</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>Logout</servlet-name>
+		<url-pattern>/Logout</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>Register</servlet-name>
+		<url-pattern>/user/Register</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>UserLogin</servlet-name>
+		<url-pattern>/user/Login</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>AndroidLogin</servlet-name>
+		<url-pattern>/android/Login</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>QueryDatabase</servlet-name>
+		<url-pattern>/android/QueryDatabase</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>FileUpload</servlet-name>
+		<url-pattern>/user/FileUpload</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>ExtraFileUpload</servlet-name>
+		<url-pattern>/user/ExtraFileUpload</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>ListImages</servlet-name>
+		<url-pattern>/user/ListImages</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>ViewImage</servlet-name>
+		<url-pattern>/user/ViewImage</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>ManagerLogin</servlet-name>
+		<url-pattern>/admin/Login</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>UserManager</servlet-name>
+		<url-pattern>/admin/UserManager</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>LoadManager</servlet-name>
+		<url-pattern>/admin/LoadManager</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>StartInstance</servlet-name>
+		<url-pattern>/admin/StartInstance</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>ShutdownInstance</servlet-name>
+		<url-pattern>/admin/ShutdownInstance</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>InstanceMetrics</servlet-name>
+		<url-pattern>/admin/InstanceMetrics</url-pattern>
+	</servlet-mapping>
+
+</web-app>

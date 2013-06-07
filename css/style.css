@@ -1,0 +1,63 @@
+body {
+	padding-top: 60px;
+	padding-bottom: 40px;
+}
+
+.navbar-inverse .brand {
+	color: white;
+}
+
+h2, h3, h4 {
+	margin: 28px 0 12px;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+label {
+	vertical-align: middle;
+}
+
+.radio, .checkbox {
+	padding-left: 0;
+}
+
+.btn-group {
+	display: block;
+}
+
+.tab-content {
+	overflow: visible;
+}
+
+.table th, .table td {
+	vertical-align: middle;
+}
+
+footer {
+	text-align: right;
+}
+
+/** Custom CSS **/
+.image-preview {
+	margin: 1px 3px;
+	height: 40px !important;
+}
+
+#welcome-menu {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+#welcome-menu .span6 {
+	background-color: #EFEFEF;
+	border-radius: 15px 15px 15px 15px;
+	padding-bottom: 40px;
+	padding-top: 20px;
+	text-align: center;
+}
+
+#welcome-menu .btn-large {
+	margin: 12px;
+}
